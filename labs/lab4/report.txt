@@ -1,0 +1,24 @@
+Iterations O(1)push O(1)pop	O(N)push	O(N)pop
+-------------------------------------------------------
+1n	    827ns    65ns	10525ns		9049ns
+2n	    259ns    63ns	17619ns		17406ns
+4n	    304ns    180ns	33068ns		36847ns
+8n	    191ns    102ns	65403ns		77204ns
+16n	    128ns    35ns	134086ns		161361ns
+32n	    183ns    21ns	266056ns		323880ns
+64n	    463ns    13ns	539578ns		662311ns
+
+run with n = 10000
+1n push operation seems to be a large outlier. 
+The other numers seem reasonable but have a relitivly large variation.
+Large O(n) valuse are muh cloaser to what i would expect from this function.
+the O(1) values are around the same magnatude (ish).
+and the O(n) seem to increse with n (for the most part).
+
+Most of the "intresting" problems I encountered invloved how much bash sucks.
+It is dificult to format strings and I still havent figured out how to output to a varible file name without thowing errors.
+I now realize it would have been MUCH eiser to just write another java program to do the testing for me.
+I also leaned that writing paragraphs in vim is quite unpleasant and my spelling is worse than I though.
+:wq
+
+

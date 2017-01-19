@@ -1,0 +1,9 @@
+Iterations O(1)push O(1)pop	O(N)push	O(N)pop
+-------------------------------------------------------
+1n	    541ns    62ns	22082ns		16373ns
+2n	    254ns    64ns	34583ns		34582ns
+4n	    325ns    55ns	84013ns		63199ns
+8n	    384ns    102ns	90723ns		138665ns
+16n	    213ns    74ns	203674ns		252762ns
+32n	    246ns    28ns	430177ns		334345ns
+64n	    701ns    35ns	521307ns		686273ns

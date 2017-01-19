@@ -1,0 +1,86 @@
+/**
+ *
+ * @author Luke Thompson
+ * @version This one
+ */
+import static org.junit.Assert.*;
+import org.junit.*;
+import org.junit.runners.MethodSorters;
+import java.io.*;
+import java.nio.file.*;
+
+import java.util.*;
+import java.lang.*;
+
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class DiGraphTests {
+ 
+   @Test
+   public void test01_Test() throws FileNotFoundException {
+      String file = "inputText9.20.txt";
+      DiGraph d = new DiGraph( file );
+      d.setStart("v6");
+      d.setStart("v1");
+
+      assertEquals( "v1 v4 v7 v6", d.getPathTo("v6") );
+      assertEquals( 6, d.getDistanceTo("v6"), 0 );
+   }
+ 
+   @Test
+   public void test02_Sparse() throws FileNotFoundException {
+      String file = "inputSparse.txt";
+      DiGraph d = new DiGraph( file );
+      d.setStart("PS");
+
+      assertEquals( 4.5, d.getDistanceTo("AA"), 0 );
+   }
+
+      
+   @Test
+   public void test03_Medium() throws FileNotFoundException {
+      String file = "inputMedium.txt";
+      DiGraph d = new DiGraph( file );
+      d.setStart("AA");
+
+      assertEquals( 5.5, d.getDistanceTo("QQ"), 0 );
+   }
+      
+   @Test
+   public void test04_Dense() throws FileNotFoundException {
+      String file = "inputDense.txt";
+      DiGraph d = new DiGraph( file );
+      d.setStart("AA");
+
+      assertEquals( 2.5, d.getDistanceTo("TJ"), 0 );
+
+      String end;
+
+
+      d.setStart("AA");
+      end = "BB";      
+      System.out.println("Path: " + d.getPathTo( end ) +"\t\t dist: " + d.getDistanceTo( end ) );
+
+      
+      d.setStart("AA");
+      end = "ZZ";      
+      System.out.println("Path: " + d.getPathTo( end ) +"\t\t dist: " + d.getDistanceTo( end ) );
+
+      d.setStart("TK");
+      end = "QZ";      
+      System.out.println("Path: " + d.getPathTo( end ) +"\t\t dist: " + d.getDistanceTo( end ) );
+
+   }
+
+   @Test
+   public void test05_Test() throws FileNotFoundException {
+      String file = "inputText9.20.txt";
+      DiGraph d = new DiGraph( file );
+      d.setStart("v1");
+      d.setStart("v6");
+
+      assertEquals( "v5", d.getPathTo("v5") );
+      assertEquals( Double.POSITIVE_INFINITY, d.getDistanceTo("v5"), 0 );
+   }
+
+}
